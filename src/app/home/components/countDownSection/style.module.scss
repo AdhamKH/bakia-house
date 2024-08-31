@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  min-height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  }
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: white;
+    position: relative;
+    z-index: 333;
+    width: 100%;
+  }
+  .header {
+    text-align: center;
+    letter-spacing: 0.3rem;
+    color: white;
+  }
+  .two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 33;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      padding: 2rem;
+      gap: 2rem;
+    }
+  }
+  .bg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.4;
+    background-color: black;
+  }
+}

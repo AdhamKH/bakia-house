@@ -1,0 +1,65 @@
+// styles/Mission.module.scss
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 3rem auto;
+  flex-wrap: wrap;
+}
+
+.heading {
+  flex: 1;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.content {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.buttonWrapper {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background: none;
+  color: #333;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  fill: var(--e-global-color-astglobalcolor0);
+  color: var(--e-global-color-astglobalcolor0);
+  font-size: 0.75rem;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-top: 16px;
+  padding-right: 40px;
+  padding-bottom: 16px;
+  padding-left: 40px;
+  font-weight: 500;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
+}
