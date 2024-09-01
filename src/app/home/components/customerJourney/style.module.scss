@@ -1,6 +1,8 @@
 .container {
   width: 100%;
   padding: 4rem 0;
+  overflow-x: hidden;
+
   .content {
     max-width: 1200px;
     margin: 0 auto;
