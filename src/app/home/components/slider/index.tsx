@@ -4,9 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import styles from "./style.module.scss";
 import Image from "next/image";
-import bg1 from "../../../../assets/visionSliders/BAGGIO STORE_00001.jpg";
-import bg2 from "../../../../assets/visionSliders/BAGGIO STORE_00006.jpg";
-import bg3 from "../../../../assets/visionSliders/home zone store-images-0.jpg";
+import bg1 from "../../../../assets/sliders/main reception_page-0001.webp";
+import bg2 from "../../../../assets//sliders/main reception_page-0002.webp";
+import bg3 from "../../../../assets/sliders/main reception_page-0003.webp";
+import bg4 from "../../../../assets/sliders/1.webp";
+import bg5 from "../../../../assets/sliders/PHOTO-2024-08-22-20-54-28.webp";
+import bg6 from "../../../../assets/sliders/PHOTO-2024-08-22-20-54-28 2.webp";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -137,6 +140,114 @@ const HeroSlider = () => {
               </motion.div>
               <Image
                 src={bg3}
+                fill
+                className={styles.imgAnimation}
+                alt="background"
+                style={{ zIndex: "-1" }}
+              ></Image>
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div className={styles.contentContainer}>
+          <div className={styles.heroSlide}>
+            <div className={styles.overlay}>
+              <motion.div
+                variants={leftContainerVariant}
+                initial="hidden"
+                ref={ref}
+                animate={controls}
+                transition={{ duration: 0.6 }}
+                className={styles.content}
+              >
+                <div>
+                  <h1>Vision</h1>
+                  <p>
+                    To deliver exceptional interior design and execution
+                    services that transform spaces into more than just visually
+                    appealing environments. We aim to create functional,
+                    personalized spaces that perfectly align with your needs and
+                    lifestyle. Our well-defined, flexible process ensures that
+                    your interior design journey is not only seamless but also
+                    unforgettable.
+                  </p>
+                </div>
+              </motion.div>
+              <Image
+                src={bg4}
+                fill
+                className={styles.imgAnimation}
+                alt="background"
+                style={{ zIndex: "-1" }}
+              ></Image>
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div className={styles.contentContainer}>
+          <div className={styles.heroSlide}>
+            <div className={styles.overlay}>
+              <motion.div
+                variants={leftContainerVariant}
+                initial="hidden"
+                ref={ref}
+                animate={controls}
+                transition={{ duration: 0.6 }}
+                className={styles.content}
+              >
+                <div>
+                  <h1>Vision</h1>
+                  <p>
+                    To deliver exceptional interior design and execution
+                    services that transform spaces into more than just visually
+                    appealing environments. We aim to create functional,
+                    personalized spaces that perfectly align with your needs and
+                    lifestyle. Our well-defined, flexible process ensures that
+                    your interior design journey is not only seamless but also
+                    unforgettable.
+                  </p>
+                </div>
+              </motion.div>
+              <Image
+                src={bg5}
+                fill
+                className={styles.imgAnimation}
+                alt="background"
+                style={{ zIndex: "-1" }}
+              ></Image>
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.div className={styles.contentContainer}>
+          <div className={styles.heroSlide}>
+            <div className={styles.overlay}>
+              <motion.div
+                variants={leftContainerVariant}
+                initial="hidden"
+                ref={ref}
+                animate={controls}
+                transition={{ duration: 0.6 }}
+                className={styles.content}
+              >
+                <div>
+                  <h1>Vision</h1>
+                  <p>
+                    To deliver exceptional interior design and execution
+                    services that transform spaces into more than just visually
+                    appealing environments. We aim to create functional,
+                    personalized spaces that perfectly align with your needs and
+                    lifestyle. Our well-defined, flexible process ensures that
+                    your interior design journey is not only seamless but also
+                    unforgettable.
+                  </p>
+                </div>
+              </motion.div>
+              <Image
+                src={bg6}
                 fill
                 className={styles.imgAnimation}
                 alt="background"

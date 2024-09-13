@@ -9,6 +9,8 @@ import { downContainerVariant, upContainerVariant } from "@/animation";
 const Projects = () => {
   const { controls, ref } = useInViewAnimation();
   const { controls: twoC, ref: twoF } = useInViewAnimation();
+  const { controls: cThree, ref: refThree } = useInViewAnimation();
+  const { controls: cFour, ref: refFour } = useInViewAnimation();
   return (
     <div className={styles.gridGallerySlide}>
       <div className={styles.contnet}>
@@ -23,8 +25,9 @@ const Projects = () => {
           }}
           className={styles.textContainer}
         >
-          <h3>Our Projects</h3>
-          <h1>Grid Gallery Slide</h1>
+          <h1>Our Projects</h1>
+          <h3>Grid Gallery </h3>
+          <button>See more</button>
         </motion.div>
         <motion.div
           animate={twoC}
@@ -38,6 +41,36 @@ const Projects = () => {
           className={styles.imageContainer}
         >
           <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
+        </motion.div>
+      </div>
+      <div className={styles.contnet}>
+        <motion.div
+          animate={cFour}
+          ref={refFour}
+          variants={upContainerVariant}
+          initial="hidden"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className={styles.imageContainer}
+        >
+          <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
+        </motion.div>
+        <motion.div
+          animate={cThree}
+          ref={refThree}
+          variants={downContainerVariant}
+          initial="hidden"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className={styles.textContainer}
+        >
+          <h1>Our Furniture</h1>
+          <h3>Grid Gallery </h3>
+          <button>See more</button>
         </motion.div>
       </div>
     </div>

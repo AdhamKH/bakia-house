@@ -7,15 +7,20 @@ const Countdown = ({
   end,
   title,
   icon,
+  totalDuration = 2000,
 }: {
   start: number;
   end: number;
   title: string;
   icon: string;
+  totalDuration?: number;
 }) => {
   const [currentNumber, setCurrentNumber] = useState(start);
   const [inView, setInView] = useState(false);
   const countdownRef = useRef(null);
+  const totalSteps = end - start;
+  const stepDuration =
+    totalSteps > 0 ? totalDuration / totalSteps : totalDuration;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,11 +48,11 @@ const Countdown = ({
   useEffect(() => {
     if (inView && currentNumber < end) {
       const timer = setTimeout(() => {
-        setCurrentNumber(currentNumber + 1);
-      }, 50);
+        setCurrentNumber((prev) => prev + 1);
+      }, stepDuration); // Adjust speed based on the number of steps needed
       return () => clearTimeout(timer);
     }
-  }, [inView, currentNumber, end]);
+  }, [inView, currentNumber, end, stepDuration]);
 
   return (
     <div className={styles.countdown} ref={countdownRef}>

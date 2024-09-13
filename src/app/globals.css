@@ -68,3 +68,7 @@ h6,
 span {
   font-family: var(--font-montserrat);
 }
+
+.ReactGridGallery_tile {
+  background-color: #b9bbbf !important;
+}

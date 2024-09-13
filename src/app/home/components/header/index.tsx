@@ -12,7 +12,7 @@ import HeroSlider from "../slider";
 const Header = () => {
   return (
     <div className={styles.container}>
-      <NavBar />
+      {/* <NavBar /> */}
       {/* <Image src={bg} fill alt="background"></Image> */}
       <div className={styles.slider}>
         <HeroSlider />

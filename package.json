@@ -13,9 +13,11 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-grid-gallery": "^1.0.1",
     "react-parallax": "^3.5.1",
     "react-scroll-parallax": "^3.4.5",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.9",
+    "yet-another-react-lightbox": "^3.21.5"
   },
   "devDependencies": {
     "@types/node": "^20",

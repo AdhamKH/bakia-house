@@ -45,7 +45,8 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  let route = pathname.split("/");
+  console.log("Test", pathname);
   return (
     <>
       <motion.div
@@ -54,6 +55,11 @@ const NavBar = () => {
         animate="visible"
         className={`${styles.navContainer} ${
           scrolled ? `${styles.scrolled}` : styles.default
+        } ${
+          (route?.includes("about") ||
+            route?.includes("form") ||
+            route?.includes("project")) &&
+          styles.scrolled
         }`}
         transition={{ type: "tween", duration: 1, delay: 0.1 }}
       >
@@ -66,124 +72,62 @@ const NavBar = () => {
             </div>
             <div className={styles.secondDivNav}>
               <ul>
-                <li className={pathname === "/home/" ? `${styles.active}` : ""}>
-                  <Link href="/home/">Home </Link>
-                </li>
-                <li
-                  className={
-                    pathname.includes("about") ? ` ${styles.active}` : ""
-                  }
-                >
-                  <Link href="/home/about">About </Link>
-                </li>
-                <li
-                  className={
-                    pathname.includes("vision") ? ` ${styles.active}` : ""
-                  }
-                >
-                  <Link href="/home/vision">vision </Link>
-                </li>
-                <li
-                  className={
-                    pathname.includes("project") ? ` ${styles.active}` : ""
-                  }
-                >
-                  <Link href="/home/project">project </Link>
-                </li>
-                <li
-                  className={
-                    pathname.includes("contact") ? ` ${styles.active}` : ""
-                  }
-                >
-                  <Link href="/home/contact">contact </Link>
-                </li>
-                <li
-                  className={
-                    pathname.includes("about") ? ` ${styles.active}` : ""
-                  }
-                >
-                  <Link href="/home/about">
-                    <button className={styles.talk}>Talk to us</button>{" "}
-                  </Link>
-                </li>
-
-                {/* <li className={`${styles.dropbtn}`}>
-                  <span
+                <Link href="/">
+                  <li
                     className={
-                      pathname.includes("/home/individual") ||
-                      pathname.includes("/home/school")
-                        ? `${styles.active} ${styles.dropbtn}`
-                        : `${styles.dropbtn}`
+                      pathname === "/" || pathname === "/home"
+                        ? `${styles.active}`
+                        : ""
                     }
                   >
-                    Subscriptions
-                  </span>
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="8"
-                      viewBox="0 0 12 8"
-                      fill="none"
-                    >
-                      <path
-                        d="M11.6538 2.00047L6.00002 7.6543L0.346191 2.00047L1.40002 0.946646L6.00002 5.54665L10.6 0.946646L11.6538 2.00047Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </span> */}
-                {/* <div className={styles.dropdown}>
-                    <ul className={styles["dropdown-content"]}>
-                      <Link href="/home/individual">
-                        <li>Individual</li>
-                      </Link>
-                      <Link href="/home/school">
-                        <li>Schools</li>
-                      </Link>
-                    </ul>
-                  </div> */}
-                {/* </li> */}
-                {/* <li className={styles.dropbtn}>
-                  <span
+                    Home
+                  </li>
+                </Link>
+                <Link href="/about">
+                  <li
                     className={
-                      pathname.includes("/home/educational-service")
-                        ? `${styles.active} ${styles.dropbtn}`
-                        : `${styles.dropbtn}`
+                      pathname.includes("about") ? ` ${styles.active}` : ""
                     }
                   >
-                    Our Services
-                  </span>
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="8"
-                      viewBox="0 0 12 8"
-                      fill="none"
-                    >
-                      <path
-                        d="M11.6538 2.00047L6.00002 7.6543L0.346191 2.00047L1.40002 0.946646L6.00002 5.54665L10.6 0.946646L11.6538 2.00047Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </span>
-                  <div className={styles.dropdown}>
-                    <ul className={styles["dropdown-content"]}>
-                      <Link href="/home/educational-service">
-                        <li>Educational</li>
-                      </Link>
-                    </ul>
-                  </div>
-                </li>
-                <li
-                  className={
-                    pathname.includes("/home/contact-us")
-                      ? ` ${styles.active}`
-                      : ""
-                  }
-                >
-                  <Link href="/home/contact-us">Contact us </Link>
-                </li> */}
+                    About
+                  </li>
+                </Link>
+                <Link href="/#">
+                  <li
+                    className={
+                      pathname.includes("vision") ? ` ${styles.active}` : ""
+                    }
+                  >
+                    vision
+                  </li>
+                </Link>
+                <Link href="/project">
+                  <li
+                    className={
+                      pathname.includes("project") ? ` ${styles.active}` : ""
+                    }
+                  >
+                    projects
+                  </li>
+                </Link>
+                <Link href="/form">
+                  <li
+                    className={
+                      pathname.includes("contact") ? ` ${styles.active}` : ""
+                    }
+                  >
+                    contact
+                  </li>
+                </Link>
+                <Link href="/form">
+                  <li
+                    className={
+                      pathname.includes("form") ? ` ${styles.active}` : ""
+                    }
+                  >
+                    <button className={styles.talk}>Talk to us</button>
+                  </li>
+                </Link>
               </ul>
             </div>
           </nav>

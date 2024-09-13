@@ -26,7 +26,6 @@ const HomePage = () => {
       {/* <Categories /> */}
       {/* <Mission /> */}
       {/* <ContactSection /> */}
-      <Footer />
     </div>
   );
 };

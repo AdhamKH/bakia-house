@@ -4,6 +4,10 @@ import "./globals.css";
 import { Providers } from "@/components/parallex";
 import Loader from "@/components/loader";
 import { Suspense } from "react";
+import Header from "./home/components/header";
+import Footer from "./home/components/footer";
+import NavBar from "@/components/navBar";
+import PageTransition from "./components/pageTranstion/pageTransition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +31,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${montserrat.variable}`}>
         <Suspense fallback={<Loader />}>
-          <Providers>{children}</Providers>
+          <Providers>
+            <NavBar />
+            <PageTransition>{children}</PageTransition>
+            <Footer />
+          </Providers>
         </Suspense>
       </body>
     </html>

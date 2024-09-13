@@ -3,6 +3,10 @@
   padding: 60px 0;
   text-align: center;
 
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .sectionTitle {
     font-size: 3rem;
     color: #fff; /* White text */
@@ -11,9 +15,10 @@
 
   .servicesContainer {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     gap: 40px;
+    width: 100%;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -24,11 +29,13 @@
   .serviceBox {
     background-color: #111; /* Dark box color */
     border: 1px solid #444;
-    padding: 30px;
+    padding: 2.7rem 2.5rem;
     position: relative;
-    min-width: 300px;
-    width: 800px;
-
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 768px) {
       max-width: 100%;
     }
