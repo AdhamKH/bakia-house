@@ -25,10 +25,10 @@ import home2 from "../../assets/projects/Home zone/compressed/home zone store-im
 import home3 from "../../assets/projects/Home zone/compressed/home zone store-images-3.webp";
 import home4 from "../../assets/projects/Home zone/compressed/home zone store-images-4.webp";
 import home5 from "../../assets/projects/Home zone/compressed/home zone store-images-5.webp";
-import hurghada2 from "../../assets/projects/hurghada chalet/compressed/living room + dining + terace_page-0002.webp";
-import hurghada3 from "../../assets/projects/hurghada chalet/compressed/living room + dining + terace_page-0003.webp";
-import hurghada4 from "../../assets/projects/hurghada chalet/compressed/living room + dining + terace_page-0004.webp";
-import hurghada5 from "../../assets/projects/hurghada chalet/compressed/living room + dining + terace_page-0005.webp";
+import hurghada2 from "../../assets/projects/hurghada chalet/compressed/living 0002.webp";
+import hurghada3 from "../../assets/projects/hurghada chalet/compressed/living 0003.webp";
+import hurghada4 from "../../assets/projects/hurghada chalet/compressed/living 0004.webp";
+import hurghada5 from "../../assets/projects/hurghada chalet/compressed/living 0005.webp";
 import kitchBoho1 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0001.webp";
 import kitchBoho2 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0002.webp";
 import kitchBoho3 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0003.webp";
