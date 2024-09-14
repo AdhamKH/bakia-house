@@ -14,7 +14,7 @@ import Team from "./components/team";
 
 const HomePage = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100dvh" }}>
       <Header />
       <AboutUS />
       <CountDownSection />

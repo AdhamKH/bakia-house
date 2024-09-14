@@ -32,6 +32,13 @@ import hurghada5 from "../../assets/projects/hurghada chalet/compressed/living r
 import kitchBoho1 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0001.webp";
 import kitchBoho2 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0002.webp";
 import kitchBoho3 from "../../assets/projects/kitchens/boho kitchen/compressed/boho kitchen_page-0003.webp";
+import modern1 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-28 2.webp";
+import modern2 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-28.webp";
+import modern3 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-29.webp";
+import modern4 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-30 2.webp";
+import modern5 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-31.webp";
+import modern6 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-21-47-04.webp";
+import modern7 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-21-47-06.webp";
 
 const AboutPage = () => {
   const BaggioStore = {
@@ -51,7 +58,7 @@ const AboutPage = () => {
   };
   const Playstation = {
     title: "Playstation",
-    imgs: [ps1, ps2, ps3, ps4, ps5, ps6],
+    imgs: [ps1, ps2, ps3, ps4, ps5],
   };
   const DiceStore = {
     title: "Dice Store",
@@ -69,6 +76,10 @@ const AboutPage = () => {
     title: "boho kitchen",
     imgs: [kitchBoho1, kitchBoho2, kitchBoho3],
   };
+  const modernFlat = {
+    title: "Modern flat",
+    imgs: [modern1, modern2, modern3, modern4, modern5, modern6, modern7],
+  };
   return (
     <div className={styles.pageContainer}>
       <div className={styles.content}>
@@ -85,6 +96,8 @@ const AboutPage = () => {
         <Projects data={hurghada} />
         <hr />
         <Projects data={KitchenBoho} />
+        <hr />
+        <Projects data={modernFlat} />
       </div>
     </div>
   );

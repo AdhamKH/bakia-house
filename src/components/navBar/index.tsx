@@ -58,7 +58,9 @@ const NavBar = () => {
         } ${
           (route?.includes("about") ||
             route?.includes("form") ||
-            route?.includes("project")) &&
+            route?.includes("project") ||
+            route?.includes("furniture") ||
+            route?.includes("contact")) &&
           styles.scrolled
         }`}
         transition={{ type: "tween", duration: 1, delay: 0.1 }}
@@ -92,13 +94,13 @@ const NavBar = () => {
                     About
                   </li>
                 </Link>
-                <Link href="/#">
+                <Link href="/furniture">
                   <li
                     className={
-                      pathname.includes("vision") ? ` ${styles.active}` : ""
+                      pathname.includes("furniture") ? ` ${styles.active}` : ""
                     }
                   >
-                    vision
+                    Furniture
                   </li>
                 </Link>
                 <Link href="/project">
@@ -110,7 +112,7 @@ const NavBar = () => {
                     projects
                   </li>
                 </Link>
-                <Link href="/form">
+                <Link href="/contact">
                   <li
                     className={
                       pathname.includes("contact") ? ` ${styles.active}` : ""
@@ -119,7 +121,7 @@ const NavBar = () => {
                     contact
                   </li>
                 </Link>
-                <Link href="/form">
+                <Link href="/contact">
                   <li
                     className={
                       pathname.includes("form") ? ` ${styles.active}` : ""
@@ -137,6 +139,13 @@ const NavBar = () => {
       <div
         className={`${styles.slidingNav} ${
           scrolled ? `${styles.scrolled}` : styles.default
+        } ${
+          (route?.includes("about") ||
+            route?.includes("form") ||
+            route?.includes("project") ||
+            route?.includes("furniture") ||
+            route?.includes("contact")) &&
+          styles.scrolled
         }`}
       >
         <nav>

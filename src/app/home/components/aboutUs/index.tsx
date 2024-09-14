@@ -3,6 +3,7 @@ import useInViewAnimation from "@/animation/useScroll";
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { downContainerVariant, leftContainerVariant } from "@/animation";
+import Link from "next/link";
 const AboutUS = () => {
   const { controls, ref } = useInViewAnimation();
   const { controls: secondControl, ref: secondRef } = useInViewAnimation();
@@ -41,7 +42,10 @@ const AboutUS = () => {
           enhance your vision.
         </p>
         <div className={styles.buttonWrapper}>
-          <button className={styles.button}>Our History</button>
+          <Link href={"/about"}>
+            {" "}
+            <button className={styles.button}>Our History</button>
+          </Link>
         </div>
       </motion.div>
     </div>

@@ -6,6 +6,7 @@ import img from "../.../../../../../assets/projects/living room + dining + terac
 import useInViewAnimation from "@/animation/useScroll";
 import { motion } from "framer-motion";
 import { downContainerVariant, upContainerVariant } from "@/animation";
+import Link from "next/link";
 const Projects = () => {
   const { controls, ref } = useInViewAnimation();
   const { controls: twoC, ref: twoF } = useInViewAnimation();
@@ -27,7 +28,9 @@ const Projects = () => {
         >
           <h1>Our Projects</h1>
           <h3>Grid Gallery </h3>
-          <button>See more</button>
+          <Link href={"/project"}>
+            <button>See more</button>
+          </Link>
         </motion.div>
         <motion.div
           animate={twoC}
@@ -70,7 +73,9 @@ const Projects = () => {
         >
           <h1>Our Furniture</h1>
           <h3>Grid Gallery </h3>
-          <button>See more</button>
+          <Link href={"/furniture"}>
+            <button>See more</button>
+          </Link>
         </motion.div>
       </div>
     </div>

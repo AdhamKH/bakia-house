@@ -1,13 +1,13 @@
 .pageContainer {
   min-height: 100dvh;
-  max-width: 1200px;
-  margin: 0 auto;
-  //   margin-top: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 7rem;
+  .content {
+    margin-top: 7rem;
+    width: 100%;
+  }
   div {
     flex: 1;
   }
