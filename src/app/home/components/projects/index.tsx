@@ -2,7 +2,9 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Image from "next/image";
-import img from "../.../../../../../assets/projects/img.jpg";
+import furintureImg from "../.../../../../../assets/projects/furinture.png";
+import projectsImg from "../.../../../../../assets/projects/BAKIA.png";
+import kitchenImg from "../.../../../../../assets/projects/KITCHEN.png";
 import useInViewAnimation from "@/animation/useScroll";
 import { motion } from "framer-motion";
 import { downContainerVariant, upContainerVariant } from "@/animation";
@@ -45,7 +47,25 @@ const Projects = () => {
           }}
           className={styles.imageContainer}
         >
-          <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+            }}
+            transition={{
+              duration: 0.2,
+              delay: 0.0,
+              type: "spring",
+              damping: 10,
+              mass: 0.75,
+              stiffness: 300,
+            }}
+          >
+            <Image
+              src={projectsImg}
+              alt="Grid Gallery Slide"
+              className={styles.img}
+            />
+          </motion.div>
         </motion.div>
       </div>
       <div className={styles.contnet}>
@@ -60,7 +80,25 @@ const Projects = () => {
           }}
           className={styles.imageContainer}
         >
-          <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+            }}
+            transition={{
+              duration: 0.2,
+              delay: 0.0,
+              type: "spring",
+              damping: 10,
+              mass: 0.75,
+              stiffness: 300,
+            }}
+          >
+            <Image
+              src={furintureImg}
+              alt="Grid Gallery Slide"
+              className={styles.img}
+            />
+          </motion.div>{" "}
         </motion.div>
         <motion.div
           animate={cThree}
@@ -109,7 +147,25 @@ const Projects = () => {
           }}
           className={styles.imageContainer}
         >
-          <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
+          <motion.div
+            whileHover={{
+              scale: 1.2,
+            }}
+            transition={{
+              duration: 0.2,
+              delay: 0.0,
+              type: "spring",
+              damping: 10,
+              mass: 0.75,
+              stiffness: 300,
+            }}
+          >
+            <Image
+              src={kitchenImg}
+              alt="Grid Gallery Slide"
+              className={styles.img}
+            />
+          </motion.div>{" "}
         </motion.div>
       </div>
     </div>

@@ -20,8 +20,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 3rem 0;
+    width: 100%;
+    overflow: hidden;
+
     @media (max-width: 767px) {
       flex-direction: column;
+      .textContainer {
+        order: 2;
+      }
+      .imagecontainer {
+        order: 1;
+      }
     }
     .buttonWrapper {
       margin-top: 20px;
@@ -84,16 +93,15 @@
 
   .imageContainer {
     max-width: 60%;
-
     img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       transition: 0.5s all;
       cursor: pointer;
-      &:hover {
-        scale: 1.2;
-      }
+      // &:hover {
+      //   scale: 1.2;
+      // }
     }
   }
 }

@@ -15,7 +15,6 @@ import ps2 from "../../assets/projects/boda_s Playstation/compressed/playstation
 import ps3 from "../../assets/projects/boda_s Playstation/compressed/playstation hub_page-0003.webp";
 import ps4 from "../../assets/projects/boda_s Playstation/compressed/playstation hub_page-0004.webp";
 import ps5 from "../../assets/projects/boda_s Playstation/compressed/playstation hub_page-0005.webp";
-import ps6 from "../../assets/projects/boda_s Playstation/compressed/playstation hub_page-0006.webp";
 import dice1 from "../../assets/projects/dise store/compressed/dice store_page-0001.webp";
 import dice2 from "../../assets/projects/dise store/compressed/dice store_page-0002.webp";
 import dice3 from "../../assets/projects/dise store/compressed/dice store_page-0003.webp";
@@ -39,6 +38,13 @@ import modern4 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-
 import modern5 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-20-54-31.webp";
 import modern6 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-21-47-04.webp";
 import modern7 from "../../assets/projects/modern flat 6th oct/compressed/PHOTO-2024-08-22-21-47-06.webp";
+import zakuza1 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 10.webp";
+import zakuza2 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 11.webp";
+import zakuza3 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 12.webp";
+import zakuza4 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 13.webp";
+import zakuza5 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 14.webp";
+import zakuza6 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 15.webp";
+import zakuza7 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 16.webp";
 
 const AboutPage = () => {
   const BaggioStore = {
@@ -80,6 +86,11 @@ const AboutPage = () => {
     title: "Modern flat",
     imgs: [modern1, modern2, modern3, modern4, modern5, modern6, modern7],
   };
+
+  const zakuza = {
+    title: "Zakuza",
+    imgs: [zakuza1, zakuza2, zakuza3, zakuza4, zakuza5, zakuza6, zakuza7],
+  };
   return (
     <div className={styles.pageContainer}>
       <div className={styles.content}>
@@ -98,6 +109,8 @@ const AboutPage = () => {
         <Projects data={KitchenBoho} />
         <hr />
         <Projects data={modernFlat} />
+        <hr />
+        <Projects data={zakuza} />
       </div>
     </div>
   );
