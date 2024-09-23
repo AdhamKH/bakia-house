@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "../../assets/logo.webp";
 import styles from "./style.module.scss";
 import Image from "next/image";
+import logo from "../../assets/logo.webp";
 const Loader = () => {
   return (
-    <div className={styles.container}>
-      <div>
-        <Image src={logo} alt="logo"></Image>
+    <div className={styles.loaderContainer}>
+      <div className={styles.imageContainer}>
+        <div className={styles.loader}></div>
+        <Image src={logo} alt="logo" width={150}></Image>
       </div>
     </div>
   );

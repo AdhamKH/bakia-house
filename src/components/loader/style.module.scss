@@ -1,8 +1,47 @@
-.container {
-  min-height: 100dv;
-  width: 100%;
+.loaderContainer {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #bfbfbf;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+  // background-color: ;
+  // background: var(--ast-global-color-0);
+  background: black;
+}
+.imageContainer {
+  position: relative;
+  width: fit-content;
+}
+
+/* Loader styles */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid white;
+  border-top: 4px solid var(--ast-global-color-0);
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  animation: spin 1s linear infinite;
+}
+
+.actual-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }

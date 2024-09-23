@@ -12,6 +12,8 @@ const Projects = () => {
   const { controls: twoC, ref: twoF } = useInViewAnimation();
   const { controls: cThree, ref: refThree } = useInViewAnimation();
   const { controls: cFour, ref: refFour } = useInViewAnimation();
+  const { controls: cFive, ref: refFive } = useInViewAnimation();
+  const { controls: cSix, ref: refSix } = useInViewAnimation();
   return (
     <div className={styles.gridGallerySlide}>
       <div className={styles.contnet}>
@@ -29,7 +31,7 @@ const Projects = () => {
           <h1>Our Projects</h1>
           <h3>Grid Gallery </h3>
           <Link href={"/project"}>
-            <button>See more</button>
+            <motion.button whileTap={{ scale: 0.8 }}>See more</motion.button>
           </Link>
         </motion.div>
         <motion.div
@@ -74,8 +76,40 @@ const Projects = () => {
           <h1>Our Furniture</h1>
           <h3>Grid Gallery </h3>
           <Link href={"/furniture"}>
-            <button>See more</button>
+            <motion.button whileTap={{ scale: 0.8 }}>See more</motion.button>
           </Link>
+        </motion.div>
+      </div>
+      <div className={styles.contnet}>
+        <motion.div
+          animate={cFive}
+          ref={refFive}
+          variants={downContainerVariant}
+          initial="hidden"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className={styles.textContainer}
+        >
+          <h1>Our Kitckens</h1>
+          <h3>Grid Gallery </h3>
+          <Link href={"/kitchen"}>
+            <motion.button whileTap={{ scale: 0.8 }}>See more</motion.button>
+          </Link>
+        </motion.div>
+        <motion.div
+          animate={cSix}
+          ref={refSix}
+          variants={upContainerVariant}
+          initial="hidden"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className={styles.imageContainer}
+        >
+          <Image src={img} alt="Grid Gallery Slide" className={styles.img} />
         </motion.div>
       </div>
     </div>

@@ -60,6 +60,7 @@ const NavBar = () => {
             route?.includes("form") ||
             route?.includes("project") ||
             route?.includes("furniture") ||
+            route?.includes("kitchen") ||
             route?.includes("contact")) &&
           styles.scrolled
         }`}
@@ -109,7 +110,16 @@ const NavBar = () => {
                       pathname.includes("project") ? ` ${styles.active}` : ""
                     }
                   >
-                    projects
+                    Projects
+                  </li>
+                </Link>
+                <Link href="/kitchen">
+                  <li
+                    className={
+                      pathname.includes("kitchen") ? ` ${styles.active}` : ""
+                    }
+                  >
+                    Kitchens
                   </li>
                 </Link>
                 <Link href="/contact">
@@ -118,7 +128,7 @@ const NavBar = () => {
                       pathname.includes("contact") ? ` ${styles.active}` : ""
                     }
                   >
-                    contact
+                    Contact
                   </li>
                 </Link>
                 <Link href="/contact">

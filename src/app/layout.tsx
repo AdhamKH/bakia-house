@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Inter, Montserrat, Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/parallex";
 import Loader from "@/components/loader";
@@ -9,7 +9,7 @@ import NavBar from "@/components/navBar";
 import PageTransition from "./components/pageTranstion/pageTransition";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Open_Sans({ subsets: ["latin"] });
 
 const montserrat = Poppins({
   subsets: ["latin"],
