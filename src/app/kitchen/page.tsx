@@ -45,10 +45,6 @@ const AboutPage = () => {
     title: "Turkey kitchen",
     imgs: [turkey2, turkey3, turkey4, turkey5],
   };
-  const KitchenBoho = {
-    title: "boho kitchen",
-    imgs: [kitchBoho1, kitchBoho2, kitchBoho3],
-  };
 
   return (
     <div className={styles.pageContainer}>
