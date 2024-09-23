@@ -60,11 +60,13 @@ const Projects = () => {
               stiffness: 300,
             }}
           >
-            <Image
-              src={projectsImg}
-              alt="Grid Gallery Slide"
-              className={styles.img}
-            />
+            <Link href={"/project"}>
+              <Image
+                src={projectsImg}
+                alt="Grid Gallery Slide"
+                className={styles.img}
+              />
+            </Link>
           </motion.div>
         </motion.div>
       </div>
@@ -93,11 +95,13 @@ const Projects = () => {
               stiffness: 300,
             }}
           >
-            <Image
-              src={furintureImg}
-              alt="Grid Gallery Slide"
-              className={styles.img}
-            />
+            <Link href={"/furniture"}>
+              <Image
+                src={furintureImg}
+                alt="Grid Gallery Slide"
+                className={styles.img}
+              />
+            </Link>
           </motion.div>{" "}
         </motion.div>
         <motion.div
@@ -136,6 +140,7 @@ const Projects = () => {
             <motion.button whileTap={{ scale: 0.8 }}>See more</motion.button>
           </Link>
         </motion.div>
+
         <motion.div
           animate={cSix}
           ref={refSix}
@@ -160,11 +165,13 @@ const Projects = () => {
               stiffness: 300,
             }}
           >
-            <Image
-              src={kitchenImg}
-              alt="Grid Gallery Slide"
-              className={styles.img}
-            />
+            <Link href={"/kitchen"}>
+              <Image
+                src={kitchenImg}
+                alt="Grid Gallery Slide"
+                className={styles.img}
+              />
+            </Link>
           </motion.div>{" "}
         </motion.div>
       </div>
