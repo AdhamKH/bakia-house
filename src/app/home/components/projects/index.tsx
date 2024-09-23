@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Image from "next/image";
-import img from "../.../../../../../assets/projects/living room + dining + terace_page-0004.jpg";
+import img from "../.../../../../../assets/projects/img.jpg";
 import useInViewAnimation from "@/animation/useScroll";
 import { motion } from "framer-motion";
 import { downContainerVariant, upContainerVariant } from "@/animation";
