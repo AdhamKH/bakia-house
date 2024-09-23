@@ -3,11 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
+  margin: 40px 20px;
   max-width: 1200px;
   margin: 3rem auto;
   flex-wrap: wrap;
-  min-height: 60dvh;
+  min-height: 80dvh;
   @media (max-width: 767px) {
     flex-direction: column;
     margin: 1rem auto;
