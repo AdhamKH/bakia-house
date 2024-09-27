@@ -23,6 +23,20 @@ import bar4 from "../../assets/furnitures/compresssed/bar4.webp";
 import bar5 from "../../assets/furnitures/compresssed/bar5.webp";
 import render6 from "../../assets/furnitures/compresssed/render_6.webp";
 import render23 from "../../assets/furnitures/compresssed/render_23.webp";
+import new1 from "../../assets/furnitures/compresssed/more/1.webp";
+import new2 from "../../assets/furnitures/compresssed/more/10.webp";
+import new3 from "../../assets/furnitures/compresssed/more/2(1).webp";
+import new4 from "../../assets/furnitures/compresssed/more/2.webp";
+import new5 from "../../assets/furnitures/compresssed/more/3.webp";
+import new6 from "../../assets/furnitures/compresssed/more/4(1).webp";
+import new7 from "../../assets/furnitures/compresssed/more/4.webp";
+import new9 from "../../assets/furnitures/compresssed/more/5.webp";
+import new10 from "../../assets/furnitures/compresssed/more/6.webp";
+import new11 from "../../assets/furnitures/compresssed/more/7.webp";
+import new12 from "../../assets/furnitures/compresssed/more/8.webp";
+import new13 from "../../assets/furnitures/compresssed/more/9.webp";
+import new14 from "../../assets/furnitures/compresssed/more/Untitled-1.webp";
+import new15 from "../../assets/furnitures/compresssed/more/tabel 22.webp";
 const AboutPage = () => {
   const images = [
     img1,
@@ -47,6 +61,18 @@ const AboutPage = () => {
     bar5,
     render6,
     render23,
+    new1,
+    new2,
+    new3,
+    new4,
+    new5,
+    new6,
+    new7,
+    new9,
+    new10,
+    new11,
+    new12,
+    new13,
   ];
   return (
     <div className={styles.pageContainer}>
