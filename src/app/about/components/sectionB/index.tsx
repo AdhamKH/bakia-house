@@ -4,6 +4,8 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { downContainerVariant, leftContainerVariant } from "@/animation";
 import Image from "next/image";
+import img from "../../../../assets/sliders/main reception_page-0002.webp";
+
 const SectionB = () => {
   const { controls, ref } = useInViewAnimation();
   const { controls: secondControl, ref: secondRef } = useInViewAnimation();
@@ -21,6 +23,7 @@ const SectionB = () => {
         }}
       >
         In-House Woodworks Division
+        <Image src={img} alt="about" width={600}></Image>
       </motion.div>
       <motion.div
         className={styles.content}
