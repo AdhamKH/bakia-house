@@ -72,6 +72,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>
@@ -108,6 +109,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>
@@ -144,6 +146,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>
@@ -180,6 +183,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>
@@ -216,6 +220,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>
@@ -252,6 +257,7 @@ const HeroSlider = () => {
                 className={styles.imgAnimation}
                 alt="background"
                 style={{ zIndex: "-1" }}
+                priority
               ></Image>
             </div>
           </div>

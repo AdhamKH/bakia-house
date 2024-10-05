@@ -6,12 +6,14 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import StepFive from "./stepFive";
 
 // Placeholder Components for Each Step
 
 const Stepper = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [value, setValue] = useState<any>();
+
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -50,6 +52,11 @@ const Stepper = () => {
       name: "Members ",
       content: <StepFour value={value} setVlaue={setValue} />,
     },
+    {
+      id: 5,
+      name: "Persoanl Info ",
+      content: <StepFive value={value} setVlaue={setValue} />,
+    },
   ];
   const currentForm = () => {
     switch (currentStep) {
@@ -64,6 +71,9 @@ const Stepper = () => {
         break;
       case 3:
         return <StepFour value={value} setVlaue={setValue} />;
+        break;
+      case 4:
+        return <StepFive value={value} setVlaue={setValue} />;
         break;
     }
   };
@@ -88,7 +98,12 @@ const Stepper = () => {
                 : ""
             }`}
           >
-            <span>{step.name}</span>
+            <button
+              style={{ background: "none", border: "none", cursor: "pointer" }}
+              onClick={() => setCurrentStep(index)}
+            >
+              <span>{step.name}</span>
+            </button>
           </div>
         ))}
       </div>

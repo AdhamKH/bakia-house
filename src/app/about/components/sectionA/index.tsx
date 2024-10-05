@@ -22,7 +22,13 @@ const SectionA = () => {
         }}
       >
         History
-        <Image src={img} alt="about" width={600}></Image>
+        <Image
+          src={img}
+          alt="about"
+          width={600}
+          style={{ maxWidth: "100%", height: "auto" }}
+          priority
+        ></Image>
       </motion.div>
       <motion.div
         className={styles.content}

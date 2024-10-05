@@ -105,8 +105,8 @@ const AboutPage = () => {
         <Projects data={homeZone} />
         <hr />
         <Projects data={hurghada} />
-        <hr />
-        <Projects data={KitchenBoho} />
+        {/* <hr /> */}
+        {/* <Projects data={KitchenBoho} /> */}
         <hr />
         <Projects data={modernFlat} />
         <hr />
