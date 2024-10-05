@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Projects from "./components/furnitures";
 import img1 from "../../assets/furnitures/compresssed/1.webp";
@@ -37,6 +38,7 @@ import new12 from "../../assets/furnitures/compresssed/more/8.webp";
 import new13 from "../../assets/furnitures/compresssed/more/9.webp";
 import new14 from "../../assets/furnitures/compresssed/more/Untitled-1.webp";
 import new15 from "../../assets/furnitures/compresssed/more/tabel 22.webp";
+import Loader from "@/components/loader";
 const AboutPage = () => {
   const images = [
     img1,
@@ -74,6 +76,30 @@ const AboutPage = () => {
     new12,
     new13,
   ];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Listen for when the document has finished loading all styles and resources
+    const handleLoad = () => {
+      setLoading(false); // Stop loading once styles and other resources are loaded
+    };
+
+    if (document.readyState === "complete") {
+      // If the document is already fully loaded, stop the loader immediately
+      setLoading(false);
+    } else {
+      // Add a listener to handle when the Homepage's resources have fully loaded
+      window.addEventListener("load", handleLoad);
+    }
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className={styles.pageContainer}>
       <div className={styles.content}>
