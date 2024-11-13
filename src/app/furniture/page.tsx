@@ -66,9 +66,7 @@ const AboutPage = async () => {
   // if (loading) {
   //   return <Loader />;
   // }
-  let data = await fetch(`${baseUrl}/media/${companyID}`, {
-    cache: "no-store",
-  });
+  let data = await fetch(`${baseUrl}/media/${companyID}`);
   let images = await data.json();
 
   return (

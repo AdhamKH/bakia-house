@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import useInViewAnimation from "@/animation/useScroll";
 import { motion } from "framer-motion";
@@ -26,11 +26,36 @@ const Furnitures = ({ imgs }: any) => {
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const handleClick = (index: number, item: any) => setIndex(index);
-  console.log("imgs", imgs?.data?.image_path);
-  const columns: Image[][] = [[], [], [], []];
-  imgs?.data?.forEach((img: any, i: any) => {
-    columns[i % 4].push(img);
-  });
+  const [columns, setColumns] = useState<Image[][]>([[], [], [], []]);
+  const distributeImages = useCallback(
+    (data: Image[], columnsCount: number) => {
+      const newColumns = data.reduce(
+        (acc: any, img, i): any => {
+          acc[i % columnsCount].push(img);
+          return acc;
+        },
+        Array.from({ length: columnsCount }, () => [])
+      );
+
+      setColumns(newColumns);
+    },
+    []
+  );
+
+  // Run the function when imgs.data is available and changes
+  useEffect(() => {
+    if (imgs?.data) {
+      distributeImages(imgs.data, 4);
+    }
+  }, [imgs, distributeImages]);
+  // const columns: Image[][] = [[], [], [], []];
+  // console.log("columns", columns);
+  // useCallback(() => {
+  //   imgs?.data?.forEach((img: any, i: any) => {
+  //     columns[i % 4].push(img);
+  //   });
+  // }, [imgs]);
+
   const openModal = (image: Image) => {
     setSelectedImage(image);
     setIsAnimating(true);
@@ -103,4 +128,4 @@ const Furnitures = ({ imgs }: any) => {
   );
 };
 
-export default Furnitures;
+export default React.memo(Furnitures);
