@@ -39,7 +39,6 @@ const Furnitures = ({ imgs }: any) => {
   // Close modal with animation
   const closeModal = () => {
     setIsAnimating(false);
-    setTimeout(() => setSelectedImage(null), 300); // Match timeout with animation duration
   };
   return (
     <>
@@ -88,7 +87,7 @@ const Furnitures = ({ imgs }: any) => {
         >
           <span className={styles.closeButton} onClick={closeModal}>
             &times;
-          </span>{" "}
+          </span>
           <Image
             src={selectedImage?.image_path}
             alt="Full-size view"
