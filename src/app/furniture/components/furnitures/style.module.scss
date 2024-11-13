@@ -136,10 +136,8 @@
 }
 
 .column {
-  flex: 25%;
-  max-width: 25%;
+  flex: 25% !important;
   padding: 0 4px;
-
   img {
     margin-top: 8px;
     vertical-align: middle;

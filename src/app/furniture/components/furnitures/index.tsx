@@ -26,28 +26,10 @@ const Furnitures = ({ imgs }: any) => {
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const handleClick = (index: number, item: any) => setIndex(index);
-  const [columns, setColumns] = useState<Image[][]>([[], [], [], []]);
-  const distributeImages = useCallback(
-    (data: Image[], columnsCount: number) => {
-      const newColumns = data.reduce(
-        (acc: any, img, i): any => {
-          acc[i % columnsCount].push(img);
-          return acc;
-        },
-        Array.from({ length: columnsCount }, () => [])
-      );
-
-      setColumns(newColumns);
-    },
-    []
-  );
+  const columns = imgs?.data;
 
   // Run the function when imgs.data is available and changes
-  useEffect(() => {
-    if (imgs?.data) {
-      distributeImages(imgs.data, 4);
-    }
-  }, [imgs, distributeImages]);
+
   // const columns: Image[][] = [[], [], [], []];
   // console.log("columns", columns);
   // useCallback(() => {
@@ -81,24 +63,24 @@ const Furnitures = ({ imgs }: any) => {
             className={styles.imageContainer}
           >
             <div className={styles.row}>
-              {columns.map((columnImages, columnIndex) => (
-                <div key={columnIndex} className={styles.column}>
-                  {columnImages.map((image: any, imageIndex) => (
+              {columns?.map((e: any) => {
+                return (
+                  <div className={styles.column}>
                     <Image
-                      key={imageIndex}
-                      src={image?.image_path}
-                      alt={`Image ${imageIndex + 1}`}
+                      key={e?.id}
+                      src={e?.image_path}
+                      alt={`Image ${e?.id + 1}`}
                       width={200}
                       height={200}
                       style={{ width: "100%", height: "auto" }}
                       priority
                       // onClick={() => setSelectedImage(image)}
-                      onClick={() => openModal(image)}
+                      onClick={() => openModal(e)}
                       layout="responsive"
                     />
-                  ))}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
