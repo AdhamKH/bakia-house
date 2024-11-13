@@ -21,6 +21,7 @@ interface Image {
   blurHeight?: number;
 }
 const Furnitures = ({ imgs }: any) => {
+  const { ref, controls } = useInViewAnimation();
   const [selectedImage, setSelectedImage] = useState<any>(null);
 
   const openModal = (image: any) => {
@@ -37,15 +38,15 @@ const Furnitures = ({ imgs }: any) => {
     <>
       <div className={styles.gridGallerySlide}>
         <div className={styles.contnet}>
-          <div
-            // animate={twoC}
-            // ref={twoF}
-            // variants={upContainerVariant}
-            // initial="hidden"
-            // transition={{
-            //   duration: 0.8,
-            //   delay: 0.4,
-            // }}
+          <motion.div
+            animate={controls}
+            ref={ref}
+            variants={upContainerVariant}
+            initial="hidden"
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+            }}
             className={styles.imageContainer}
           >
             <div className={styles.row}>
@@ -70,7 +71,7 @@ const Furnitures = ({ imgs }: any) => {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {selectedImage && (
