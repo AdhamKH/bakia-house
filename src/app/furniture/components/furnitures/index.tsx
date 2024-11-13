@@ -19,26 +19,15 @@ interface Image {
   blurHeight?: number;
 }
 const Furnitures = ({ imgs }: any) => {
-  // const { controls, ref } = useInViewAnimation();
   console.log("imgs", imgs);
   const { controls: twoC, ref: twoF } = useInViewAnimation();
   const [index, setIndex] = useState(-1);
   const [selectedImage, setSelectedImage] = useState<any>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const handleClick = (index: number, item: any) => setIndex(index);
+
   const columns = imgs?.data;
 
-  // Run the function when imgs.data is available and changes
-
-  // const columns: Image[][] = [[], [], [], []];
-  // console.log("columns", columns);
-  // useCallback(() => {
-  //   imgs?.data?.forEach((img: any, i: any) => {
-  //     columns[i % 4].push(img);
-  //   });
-  // }, [imgs]);
-
-  const openModal = (image: Image) => {
+  const openModal = (image: any) => {
     setSelectedImage(image);
     setIsAnimating(true);
   };
@@ -75,7 +64,7 @@ const Furnitures = ({ imgs }: any) => {
                       style={{ width: "100%", height: "auto" }}
                       priority
                       // onClick={() => setSelectedImage(image)}
-                      onClick={() => openModal(e)}
+                      // onClick={() => openModal(e)}
                       layout="responsive"
                     />
                   </div>
@@ -85,7 +74,7 @@ const Furnitures = ({ imgs }: any) => {
           </div>
         </div>
       </div>
-      {selectedImage && (
+      {/* {selectedImage && (
         <div
           className={`${styles.modal} ${
             isAnimating ? styles.open : styles.close
@@ -105,7 +94,7 @@ const Furnitures = ({ imgs }: any) => {
             onClick={(e) => e.stopPropagation()}
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };
