@@ -9,6 +9,8 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Loader from "@/components/loader";
 import Image from "next/image";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 interface Image {
   src: string;
@@ -50,18 +52,20 @@ const Furnitures = ({ imgs }: any) => {
               {columns?.map((e: any) => {
                 return (
                   <div className={styles.column} key={e?.id}>
-                    <Image
-                      onClick={() => openModal(e)} // Open modal with full-size image
-                      key={e?.id}
-                      src={e?.image_path}
-                      alt={`Image ${e?.id + 1}`}
-                      width={200}
-                      height={200}
-                      style={{ width: "100%", height: "auto" }}
-                      priority
-                      layout="responsive"
-                      className={styles.img}
-                    />
+                    <Zoom>
+                      <Image
+                        // onClick={() => openModal(e)} // Open modal with full-size image
+                        key={e?.id}
+                        src={e?.image_path}
+                        alt={`Image ${e?.id + 1}`}
+                        width={200}
+                        height={200}
+                        style={{ width: "100%", height: "auto" }}
+                        priority
+                        layout="responsive"
+                        className={styles.img}
+                      />
+                    </Zoom>
                   </div>
                 );
               })}
