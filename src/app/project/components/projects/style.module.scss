@@ -3,9 +3,9 @@
   position: relative;
   width: 100%;
   min-height: 60dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   &:after {
     position: absolute;
     content: "";
@@ -87,8 +87,8 @@
   }
 
   .imageContainer {
-    max-width: 60%;
-    background: var(--ast-global-color-0);
+    // max-width: 60%;
+    // background: var(--ast-global-color-0);
     img {
       width: 100%;
       height: auto;
@@ -124,4 +124,22 @@
     max-width: 100%;
     overflow: hidden;
   }
+}
+.myMasonryGrid {
+  display: flex;
+  margin-left: -10px; /* Offset the column gap */
+  width: auto;
+}
+
+.myMasonryGrid_column {
+  padding-left: 10px; /* Column padding */
+  background-clip: padding-box;
+}
+
+.masonryImage {
+  margin-bottom: 10px; /* Gap between images */
+  width: 100%;
+  height: auto; /* Ensure all images maintain aspect ratio */
+  object-fit: cover; /* Ensure the images cover their containers */
+  border-radius: 10px; /* Optional for styling */
 }

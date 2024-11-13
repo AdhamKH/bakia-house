@@ -8,44 +8,99 @@ import { Gallery } from "react-grid-gallery";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Loader from "@/components/loader";
+import Image from "next/image";
 
+interface Image {
+  src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+  blurWidth?: number;
+  blurHeight?: number;
+}
 const Furnitures = ({ imgs }: any) => {
   // const { controls, ref } = useInViewAnimation();
+  console.log("imgs", imgs);
   const { controls: twoC, ref: twoF } = useInViewAnimation();
   const [index, setIndex] = useState(-1);
-
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   const handleClick = (index: number, item: any) => setIndex(index);
+  console.log("imgs", imgs?.data?.image_path);
+  const columns: Image[][] = [[], [], [], []];
+  imgs?.data?.forEach((img: any, i: any) => {
+    columns[i % 4].push(img);
+  });
+  const openModal = (image: Image) => {
+    setSelectedImage(image);
+    setIsAnimating(true);
+  };
 
+  // Close modal with animation
+  const closeModal = () => {
+    setIsAnimating(false);
+    setTimeout(() => setSelectedImage(null), 300); // Match timeout with animation duration
+  };
   return (
-    <div className={styles.gridGallerySlide}>
-      <div className={styles.contnet}>
-        <motion.div
-          animate={twoC}
-          ref={twoF}
-          variants={upContainerVariant}
-          initial="hidden"
-          transition={{
-            duration: 0.8,
-            delay: 0.4,
-          }}
-          className={styles.imageContainer}
-        >
-          <div className={styles.imagesContainer}>
-            <Gallery
-              images={imgs}
-              onClick={handleClick}
-              enableImageSelection={false}
-            ></Gallery>
-            <Lightbox
-              slides={imgs}
-              open={index >= 0}
-              index={index}
-              close={() => setIndex(-1)}
-            />
-          </div>
-        </motion.div>
+    <>
+      <div className={styles.gridGallerySlide}>
+        <div className={styles.contnet}>
+          <motion.div
+            animate={twoC}
+            ref={twoF}
+            variants={upContainerVariant}
+            initial="hidden"
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+            }}
+            className={styles.imageContainer}
+          >
+            <div className={styles.row}>
+              {columns.map((columnImages, columnIndex) => (
+                <div key={columnIndex} className={styles.column}>
+                  {columnImages.map((image: any, imageIndex) => (
+                    <Image
+                      key={imageIndex}
+                      src={image?.image_path}
+                      alt={`Image ${imageIndex + 1}`}
+                      width={200}
+                      height={200}
+                      style={{ width: "100%", height: "auto" }}
+                      priority
+                      // onClick={() => setSelectedImage(image)}
+                      onClick={() => openModal(image)}
+                      layout="resposive"
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </div>
+      {selectedImage && (
+        <div
+          className={`${styles.modal} ${
+            isAnimating ? styles.open : styles.close
+          }`}
+          onClick={closeModal}
+        >
+          <span className={styles.closeButton} onClick={closeModal}>
+            &times;
+          </span>{" "}
+          <Image
+            src={selectedImage?.image_path}
+            alt="Full-size view"
+            className={styles.fullImage}
+            width={200}
+            height={200}
+            style={{ height: "auto" }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

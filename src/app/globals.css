@@ -72,3 +72,12 @@ span {
 .ReactGridGallery_tile {
   background-color: #b9bbbf !important;
 }
+.slick-active {
+  a {
+    img {
+      border: 3px solid white;
+      opacity: 1;
+      scale: 1.2;
+    }
+  }
+}

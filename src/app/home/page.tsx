@@ -47,7 +47,7 @@ const HomePage = () => {
       <AboutUS />
       <CountDownSection />
       <CustomerJourney />
-      <Projects />
+      {/* <Projects /> */}
       <Services />
       <Team />
       {/* <OurProjects /> */}

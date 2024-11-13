@@ -1,5 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./style.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 import Projects from "./components/projects";
 import baggieimg1 from "../../assets/projects/Baggio store/compressed/BAGGIO STORE_00001.webp";
 import baggieimg2 from "../../assets/projects/Baggio store/compressed/BAGGIO STORE_00002.webp";
@@ -45,8 +54,21 @@ import zakuza4 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 13
 import zakuza5 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 14.webp";
 import zakuza6 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 15.webp";
 import zakuza7 from "./../../assets/projects/zakzuk/PHOTO-2024-08-20-16-08-50 16.webp";
+import {
+  EffectCoverflow,
+  Pagination,
+  FreeMode,
+  Navigation,
+  Thumbs,
+} from "swiper/modules";
+import Image from "next/image";
+import CustomSlider from "@/components/Slider/Embla Carousel";
 
+// configure Swiper to use modules
+SwiperCore.use([Pagination, EffectCoverflow]);
 const AboutPage = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>({});
+
   const BaggioStore = {
     title: "Baggio store",
     imgs: [
@@ -86,15 +108,31 @@ const AboutPage = () => {
     title: "Modern flat",
     imgs: [modern1, modern2, modern3, modern4, modern5, modern6, modern7],
   };
-
   const zakuza = {
     title: "Zakuza",
     imgs: [zakuza1, zakuza2, zakuza3, zakuza4, zakuza5, zakuza6, zakuza7],
   };
+  const combinedData = {
+    title: "Combined Projects", // Single title for all images
+    imgs: [
+      // Combine all images from different stores
+      ...BaggioStore.imgs,
+      ...FriedChicken.imgs,
+      ...Playstation.imgs,
+      ...DiceStore.imgs,
+      ...homeZone.imgs,
+      ...hurghada.imgs,
+      ...KitchenBoho.imgs,
+      ...modernFlat.imgs,
+      ...zakuza.imgs,
+    ],
+  };
+  SwiperCore.use([EffectCoverflow, Pagination]);
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.content}>
-        <Projects data={BaggioStore} />
+        {/* <Projects data={BaggioStore} />
         <hr />
         <Projects data={FriedChicken} />
         <hr />
@@ -105,12 +143,12 @@ const AboutPage = () => {
         <Projects data={homeZone} />
         <hr />
         <Projects data={hurghada} />
-        {/* <hr /> */}
-        {/* <Projects data={KitchenBoho} /> */}
         <hr />
         <Projects data={modernFlat} />
         <hr />
-        <Projects data={zakuza} />
+        <Projects data={zakuza} /> */}
+        {/* <Projects data={combinedData} /> */}
+        <CustomSlider />
       </div>
     </div>
   );
