@@ -19,23 +19,18 @@ interface Image {
   blurHeight?: number;
 }
 const Furnitures = ({ imgs }: any) => {
-  console.log("imgs", imgs);
-  const { controls: twoC, ref: twoF } = useInViewAnimation();
-  const [index, setIndex] = useState(-1);
   const [selectedImage, setSelectedImage] = useState<any>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
+
+  const openModal = (image: any) => {
+    setSelectedImage(image); // Set the selected image to open in modal
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null); // Clear the selected image to close the modal
+  };
 
   const columns = imgs?.data;
 
-  const openModal = (image: any) => {
-    setSelectedImage(image);
-    setIsAnimating(true);
-  };
-
-  // Close modal with animation
-  const closeModal = () => {
-    setIsAnimating(false);
-  };
   return (
     <>
       <div className={styles.gridGallerySlide}>
@@ -56,6 +51,7 @@ const Furnitures = ({ imgs }: any) => {
                 return (
                   <div className={styles.column} key={e?.id}>
                     <Image
+                      onClick={() => openModal(e)} // Open modal with full-size image
                       key={e?.id}
                       src={e?.image_path}
                       alt={`Image ${e?.id + 1}`}
@@ -63,9 +59,8 @@ const Furnitures = ({ imgs }: any) => {
                       height={200}
                       style={{ width: "100%", height: "auto" }}
                       priority
-                      // onClick={() => setSelectedImage(image)}
-                      // onClick={() => openModal(e)}
                       layout="responsive"
+                      className={styles.img}
                     />
                   </div>
                 );
@@ -74,27 +69,24 @@ const Furnitures = ({ imgs }: any) => {
           </div>
         </div>
       </div>
-      {/* {selectedImage && (
-        <div
-          className={`${styles.modal} ${
-            isAnimating ? styles.open : styles.close
-          }`}
-          onClick={closeModal}
-        >
+      {selectedImage && (
+        <div className={`${styles.modal} =`} onClick={closeModal}>
           <span className={styles.closeButton} onClick={closeModal}>
             &times;
           </span>
-          <Image
-            src={selectedImage?.image_path}
-            alt="Full-size view"
-            className={styles.fullImage}
-            width={200}
-            height={200}
-            style={{ height: "auto" }}
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className={styles.fullImage}>
+            <Image
+              src={selectedImage?.image_path}
+              alt="Full-size view"
+              width={500}
+              height={200}
+              priority
+              style={{ height: "80vh", width: "auto" }}
+              // layout="responsive"
+            />
+          </div>
         </div>
-      )} */}
+      )}
     </>
   );
 };

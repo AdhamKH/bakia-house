@@ -93,7 +93,7 @@
     // background: var(--ast-global-color-0);
     width: 100%;
 
-    img {
+    .img {
       width: 100%;
       height: auto;
       // border-radius: 8px;
@@ -157,32 +157,31 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
-  cursor: pointer;
-  // opacity: 0;
-  transition: opacity scale 0.3s ease;
-
-  &.open {
-    // opacity: 1; // Fade in
-    scale: 1;
-  }
-
-  &.close {
-    // opacity: 0; // Fade out
-    scale: 0;
-  }
+  overflow: hidden;
 }
 
 .fullImage {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  cursor: default;
+  max-width: 90vw; /* Limit the modal content to 90% of viewport width */
+  max-height: 90vh; /* Limit the modal content to 90% of viewport height */
   width: auto;
-  height: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.fullImage img {
+  // max-width: 100%; /* Ensure image does not exceed .fullImage container width */
+  // max-height: 100%; /* Ensure image does not exceed .fullImage container height */
+  // width: auto;
+  // height: auto;
+  // object-fit: contain; /* Contain image within the box while preserving aspect ratio */
 }
 
 .closeButton {
@@ -194,10 +193,12 @@
   color: white;
   cursor: pointer;
   transition: color 0.2s ease;
-  &:hover {
-    color: #ccc;
-  }
 }
+
+.closeButton:hover {
+  color: #ccc;
+}
+
 @media (max-width: 767px) {
   .contnet {
     max-width: 100%;
@@ -216,5 +217,25 @@
     width: 100%;
     max-width: 100%;
     overflow: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .contnet {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fullImage {
+    max-width: 85vw; /* Slightly smaller for mobile screens */
+    max-height: 85vh;
+  }
+  .fullImage img {
+    width: 100% !important;
+    height: auto !important;
   }
 }
