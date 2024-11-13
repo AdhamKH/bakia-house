@@ -44,15 +44,15 @@ const Furnitures = ({ imgs }: any) => {
     <>
       <div className={styles.gridGallerySlide}>
         <div className={styles.contnet}>
-          <motion.div
-            animate={twoC}
-            ref={twoF}
-            variants={upContainerVariant}
-            initial="hidden"
-            transition={{
-              duration: 0.8,
-              delay: 0.4,
-            }}
+          <div
+            // animate={twoC}
+            // ref={twoF}
+            // variants={upContainerVariant}
+            // initial="hidden"
+            // transition={{
+            //   duration: 0.8,
+            //   delay: 0.4,
+            // }}
             className={styles.imageContainer}
           >
             <div className={styles.row}>
@@ -69,13 +69,13 @@ const Furnitures = ({ imgs }: any) => {
                       priority
                       // onClick={() => setSelectedImage(image)}
                       onClick={() => openModal(image)}
-                      layout="resposive"
+                      layout="responsive"
                     />
                   ))}
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       {selectedImage && (
