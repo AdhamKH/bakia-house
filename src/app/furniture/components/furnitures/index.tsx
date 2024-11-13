@@ -65,7 +65,7 @@ const Furnitures = ({ imgs }: any) => {
             <div className={styles.row}>
               {columns?.map((e: any) => {
                 return (
-                  <div className={styles.column}>
+                  <div className={styles.column} key={e?.id}>
                     <Image
                       key={e?.id}
                       src={e?.image_path}
