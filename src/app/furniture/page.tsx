@@ -23,7 +23,8 @@ const AboutPage = () => {
     };
 
     fetchData();
-  }, [baseUrl, companyID]);
+  }, []);
+
   if (loading) {
     return <Loader />;
   }
