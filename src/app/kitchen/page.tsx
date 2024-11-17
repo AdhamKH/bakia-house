@@ -48,20 +48,7 @@ const AboutPage = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.content}>
-        <Projects data={bohoChicken} />
-        <hr />
-        <Projects data={kitcenD1D2} />
-        <hr />
-        <Projects data={KitchenMaadi} />
-        <hr />
-        <Projects data={KitchenMini} />
-        <hr />
-        <Projects data={KitchenTurkey} />
-        <hr />
-        {/* <Projects data={KitchenBoho} /> */}
-        {/* <hr /> */}
-      </div>
+      <div className={styles.content}></div>
     </div>
   );
 };

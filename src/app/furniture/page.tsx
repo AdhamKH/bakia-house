@@ -18,7 +18,7 @@ const AboutPage = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // Hide loader when request is complete
+        setLoading(false);
       }
     };
 

@@ -68,7 +68,10 @@ const SlidingPane: React.FC<props> = ({ open, setOpen }: props) => {
   };
 
   React.useLayoutEffect(() => {
-    if (pathname) handlClose();
+    if (pathname) {
+      handlClose();
+      setOpenAccorditionSecond(false);
+    }
   }, [pathname]);
 
   const [openAccordtion, setOpenAccordition] = React.useState<boolean>(false);
@@ -146,9 +149,57 @@ const SlidingPane: React.FC<props> = ({ open, setOpen }: props) => {
             <motion.li variants={navItem} className={styles.liFont}>
               <Link href="/furniture">Furniture</Link>
             </motion.li>
-            <motion.li variants={navItem} className={styles.liFont}>
+            {/* <motion.li variants={navItem} className={styles.liFont}>
               <Link href="/project">project </Link>
+            </motion.li> */}
+            <motion.li variants={navItem} className={styles.liFont}>
+              <div className={styles.special} onClick={hanldeChangeSecond}>
+                <p>project </p>
+                <button>
+                  {openAccordtionSecond ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M17.6538 10.9018L12 16.5557L6.34619 10.9018L7.40002 9.84801L12 14.448L16.6 9.84801L17.6538 10.9018Z"
+                        fill="white"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.34616 14.9009L12 9.24707L17.6538 14.9009L16.6 15.9547L12 11.3547L7.39998 15.9547L6.34616 14.9009Z"
+                        fill="white"
+                      />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </motion.li>
+            <div
+              className={
+                openAccordtionSecond
+                  ? `${styles.accodtion} ${styles.show}`
+                  : `${styles.accodtion}`
+              }
+            >
+              <Link href={`/commercial`}>
+                <p>Commercial</p>
+              </Link>
+              <Link href={`/residential`}>
+                <p>Resedential</p>
+              </Link>
+            </div>
             <motion.li variants={navItem} className={styles.liFont}>
               <Link href="/contact"> contact</Link>
             </motion.li>

@@ -1,0 +1,41 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Space between items
+  padding: 20px;
+  // background-color: #f9f9f9; // Light background for the container
+  box-shadow: 1px solid #ddd;
+  border-radius: 8px;
+  background: black;
+  width: 100%;
+  gap: 2rem;
+  // box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 1);
+}
+
+.detailItem {
+  padding: 15px;
+  // background-color: #fff;
+  // border: 1px solid #eee;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+  color: white;
+}
+
+.value {
+  color: #555;
+  color: white;
+  text-transform: capitalize;
+}
+.keyValue {
+  display: flex;
+  gap: 1rem;
+}

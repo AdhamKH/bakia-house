@@ -4,7 +4,7 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { downContainerVariant, leftContainerVariant } from "@/animation";
 import Image from "next/image";
-import img from "../../../../assets/sliders/main reception_page-0002.webp";
+import img from "../../../../assets/aboutUS/WhatsApp Image 2024-11-16 at 11.08.34 PM (1).jpeg";
 
 const SectionB = () => {
   const { controls, ref } = useInViewAnimation();
@@ -27,7 +27,7 @@ const SectionB = () => {
           src={img}
           alt="about"
           width={600}
-          style={{ maxWidth: "100%", height: "auto" }}
+          style={{ maxWidth: "100%", height: "auto", width: "80%" }}
           priority
         ></Image>
       </motion.div>

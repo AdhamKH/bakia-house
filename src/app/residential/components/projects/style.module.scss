@@ -1,0 +1,145 @@
+.gridGallerySlide {
+  // padding: 20px;
+  position: relative;
+  width: 100%;
+  min-height: 60dvh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ast-global-color-0);
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .contnet {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+    .buttonWrapper {
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 10px 20px;
+      border: 1px solid #333;
+      background: whtie;
+      color: #333;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      fill: var(--e-global-color-astglobalcolor0);
+      color: var(--e-global-color-astglobalcolor0);
+      font-size: 0.75rem;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      padding-top: 16px;
+      padding-right: 40px;
+      padding-bottom: 16px;
+      padding-left: 40px;
+      font-weight: 500;
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 1em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+  }
+
+  .textContainer {
+    // color: #fff; // White text color
+    max-width: 100%;
+    z-index: 33;
+    width: 100% h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: black; // White text color
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0;
+      font-weight: bold;
+      color: black; // White text color
+      line-height: 1.2;
+    }
+  }
+
+  .imageContainer {
+    // max-width: 60%;
+    // background: var(--ast-global-color-0);
+    img {
+      width: 100%;
+      height: auto;
+      // border-radius: 8px;
+      transition: 0.5s all;
+      cursor: pointer;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+  }
+}
+.imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .img {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .contnet {
+    max-width: 100%;
+    width: 100%;
+  }
+  .imageContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+  .imagesContainer {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+.myMasonryGrid {
+  display: flex;
+  margin-left: -10px; /* Offset the column gap */
+  width: auto;
+}
+
+.myMasonryGrid_column {
+  padding-left: 10px; /* Column padding */
+  background-clip: padding-box;
+}
+
+.masonryImage {
+  margin-bottom: 10px; /* Gap between images */
+  width: 100%;
+  height: auto; /* Ensure all images maintain aspect ratio */
+  object-fit: cover; /* Ensure the images cover their containers */
+  border-radius: 10px; /* Optional for styling */
+}

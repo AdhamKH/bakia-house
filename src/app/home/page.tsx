@@ -13,29 +13,52 @@ import Projects from "./components/projects";
 import Services from "./components/services";
 import Team from "./components/team";
 import Loader from "@/components/loader";
+import axios from "axios";
+import { baseUrl, companyID } from "@/util";
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   // Listen for when the document has finished loading all styles and resources
+  //   const handleLoad = () => {
+  //     setLoading(false); // Stop loading once styles and other resources are loaded
+  //   };
+
+  //   if (document.readyState === "complete") {
+  //     // If the document is already fully loaded, stop the loader immediately
+  //     setLoading(false);
+  //   } else {
+  //     // Add a listener to handle when the Homepage's resources have fully loaded
+  //     window.addEventListener("load", handleLoad);
+  //   }
+
+  //   // Cleanup event listener
+  //   return () => {
+  //     window.removeEventListener("load", handleLoad);
+  //   };
+  // }, []);
+
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true); // Loading state
+  const conpanyInfo = data?.data[0];
   useEffect(() => {
-    // Listen for when the document has finished loading all styles and resources
-    const handleLoad = () => {
-      setLoading(false); // Stop loading once styles and other resources are loaded
+    const fetchData = async () => {
+      setLoading(true); // Show loader when starting the request
+      try {
+        const response = await axios.get(`${baseUrl}/companies/${companyID}`);
+        setData(response.data); // Save the fetched data
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    if (document.readyState === "complete") {
-      // If the document is already fully loaded, stop the loader immediately
-      setLoading(false);
-    } else {
-      // Add a listener to handle when the Homepage's resources have fully loaded
-      window.addEventListener("load", handleLoad);
-    }
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
+    fetchData();
   }, []);
+
+  console.log("conpanyInfo", conpanyInfo);
 
   if (loading) {
     return <Loader />;

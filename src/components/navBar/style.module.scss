@@ -73,7 +73,7 @@
       list-style: none;
 
       li {
-        color: var(--grey-darkest);
+        // color: var(--grey-darkest);
         font-family: Open Sans;
         font-size: 1rem;
         font-style: normal;
@@ -138,7 +138,7 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
-    font-family: var(--font-montserrat);
+    // font-family: var(--font-montserrat);
   }
   .talk {
     padding-top: 15px;
@@ -177,40 +177,13 @@
 }
 .btnContainer {
   position: relative;
-  .dropbtn {
-    cursor: pointer;
-  }
+
   ul {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
     list-style: none;
     // position: relative;
-    .dropdown-content {
-      // display: none;
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      left: -4rem;
-      background-color: #f9f9f9;
-      border-radius: 0.5rem;
-      background: var(--grey-light);
-      // padding: 1rem 5rem 1rem 1.5rem;
-      padding: 1rem 1rem;
-      width: 10rem;
-      transition: opacity 0.3s ease-in-out;
-      margin-top: 1rem;
-      z-index: 999;
-      ul {
-        a {
-          width: 100%;
-        }
-      }
-      li {
-        padding: 0 !important;
-        width: 100%;
-      }
-    }
 
     .open {
       visibility: visible;
@@ -222,7 +195,7 @@
       transition: opacity 0.3s ease-in-out;
     }
     li {
-      color: var(--grey-darkest);
+      // color: var(--grey-darkest);
       font-family: Open Sans;
       font-size: 1rem;
       font-style: normal;
@@ -309,6 +282,41 @@
     height: 20px;
     fill: var(--ast-global-color-5);
   }
+}
+.dropdown-content {
+  // display: block;
+  // visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  // background: var(--grey-light);
+  padding: 1rem 0.5rem;
+  width: 120px;
+  // height: 40px;
+  transition: opacity 0.3s ease-in;
+  margin-top: 2.9rem;
+  z-index: 999;
+  background-color: rgb(57, 60, 64);
+  li {
+    padding: 0.5rem 0.3rem !important;
+  }
+}
+
+.dropbtn:hover .dropdown-content {
+  visibility: visible;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  color: white;
+}
+.dropbtn {
+  cursor: pointer;
+  color: white;
+  font-family: Open Sans;
 }
 @media (max-width: 990px) {
   .nav {

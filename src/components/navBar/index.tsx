@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/logo-removebg-preview.png";
 import logo2 from "../../assets/logo bakia.webp";
 import SlidingPane from "../slidingPane";
 import Link from "next/link";
@@ -11,10 +11,12 @@ import { upContainerVariant } from "@/animation";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.scss";
 import { useWindowSize } from "../widthSreen";
+import useInViewAnimation from "@/animation/useScroll";
 
 const NavBar = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState(false);
+  const { ref, controls } = useInViewAnimation();
 
   const { push } = useRouter();
   const pathname: string = usePathname();
@@ -23,6 +25,7 @@ const NavBar = () => {
   };
 
   const [width, height] = useWindowSize();
+
   useEffect(() => {
     if (width >= 1000) {
       setOpen(false);
@@ -45,6 +48,7 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   let route = pathname.split("/");
   console.log("Test", pathname);
   return (
@@ -52,25 +56,32 @@ const NavBar = () => {
       <motion.div
         variants={upContainerVariant}
         initial="hidden"
-        animate="visible"
         className={`${styles.navContainer} ${
           scrolled ? `${styles.scrolled}` : styles.default
         } ${
           (route?.includes("about") ||
             route?.includes("form") ||
             route?.includes("project") ||
+            route?.includes("commercial") ||
+            route?.includes("residential") ||
             route?.includes("furniture") ||
             route?.includes("kitchen") ||
             route?.includes("contact")) &&
           styles.scrolled
         }`}
-        transition={{ type: "tween", duration: 1, delay: 0.1 }}
+        ref={ref}
+        animate={controls}
+        transition={{ type: "tween", duration: 1.5, delay: 3.0 }}
       >
         <div>
           <nav className={styles.nav}>
             <div className={styles.firstDivNav}>
               <Link href="/home">
-                <Image src={logo} alt="logo"></Image>
+                <Image
+                  src={logo}
+                  alt="logo"
+                  style={{ width: "40%", height: "auto" }}
+                ></Image>
               </Link>
             </div>
             <div className={styles.secondDivNav}>
@@ -104,7 +115,7 @@ const NavBar = () => {
                     Furniture
                   </li>
                 </Link>
-                <Link href="/project">
+                {/* <Link href="/project">
                   <li
                     className={
                       pathname.includes("project") ? ` ${styles.active}` : ""
@@ -112,8 +123,51 @@ const NavBar = () => {
                   >
                     Projects
                   </li>
-                </Link>
-                <Link href="/kitchen">
+                </Link> */}
+                <li
+                  className={`${styles.dropbtn} ${
+                    pathname.includes("home/individual") ||
+                    pathname.includes("home/school")
+                      ? ` ${styles.active}`
+                      : ""
+                  } `}
+                >
+                  <span
+                    className={
+                      pathname.includes("/home/individual") ||
+                      pathname.includes("/home/school")
+                        ? `${styles.active} ${styles.dropbtn}`
+                        : `${styles.dropbtn}`
+                    }
+                  >
+                    Projects
+                  </span>
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="8"
+                      viewBox="0 0 12 8"
+                      fill="none"
+                    >
+                      <path
+                        d="M11.6538 2.00047L6.00002 7.6543L0.346191 2.00047L1.40002 0.946646L6.00002 5.54665L10.6 0.946646L11.6538 2.00047Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </span>
+                  <div className={styles.dropdown}>
+                    <ul className={`${styles["dropdown-content"]} `}>
+                      <li>
+                        <Link href={`/commercial`}>Commercial</Link>
+                      </li>
+                      <li>
+                        <Link href={`/residential`}>Residential</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                {/* <Link href="/kitchen">
                   <li
                     className={
                       pathname.includes("kitchen") ? ` ${styles.active}` : ""
@@ -121,7 +175,7 @@ const NavBar = () => {
                   >
                     Kitchens
                   </li>
-                </Link>
+                </Link> */}
                 <Link href="/contact">
                   <li
                     className={
@@ -131,7 +185,7 @@ const NavBar = () => {
                     Contact
                   </li>
                 </Link>
-                <Link href="/contact">
+                {/* <Link href="/contact">
                   <li
                     className={
                       pathname.includes("form") ? ` ${styles.active}` : ""
@@ -139,7 +193,7 @@ const NavBar = () => {
                   >
                     <button className={styles.talk}>Talk to us</button>
                   </li>
-                </Link>
+                </Link> */}
               </ul>
             </div>
           </nav>
@@ -152,6 +206,8 @@ const NavBar = () => {
         } ${
           (route?.includes("about") ||
             route?.includes("form") ||
+            route?.includes("commercial") ||
+            route?.includes("residential") ||
             route?.includes("project") ||
             route?.includes("furniture") ||
             route?.includes("contact")) &&

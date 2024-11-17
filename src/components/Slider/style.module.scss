@@ -25,9 +25,15 @@
   right: 4rem;
   top: 35%;
   position: absolute;
-  //   transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
   &:before {
     font-size: 3rem;
+    // padding-top: 0.4rem;
+    // background-color: black;
+    // opacity: 1;
   }
 }
 .pre {
